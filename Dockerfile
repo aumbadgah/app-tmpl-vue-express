@@ -10,6 +10,7 @@ ADD package.json /app/package.json
 ADD index.js /app/index.js
 ADD .babelrc /app/.babelrc
 ADD .eslintrc /app/.eslintrc
+
 ADD process.yml /app/process.yml
 
 WORKDIR /app

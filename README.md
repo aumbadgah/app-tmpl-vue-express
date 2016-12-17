@@ -18,16 +18,13 @@ NODE_ENV=dev npm i
 NODE_ENV=dev BASE_PATH=/wut npm start
 ```
 
-environment
-```
-PORT=[3000]
-NODE_ENV=[dev || prod]
-BASE_PATH=[/]
-```
-
 View results at [http://localhost/wut](http://localhost/wut)
 
-##### todo
+environment
+```
+[PORT=3000]
+[NODE_ENV=prod] # dev, prod
+[BASE_PATH=/]
+```
 
-fresh hmr build should be mounted for serve in container
-also mount templates directory
+Defaults can be configured in `config/defaults.json`
