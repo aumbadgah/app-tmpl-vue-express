@@ -4,8 +4,6 @@
 - Express
 - Docker
 
-Application template for [aumbadgah-ci](https://github.com/aumbadgah/aumbadgah-ci)
-
 #### requirements
 
 - [NodeJS](https://nodejs.org/en/download/)
