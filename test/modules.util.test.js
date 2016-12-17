@@ -38,7 +38,7 @@ describe('util', function() {
             util.config.port.should.be.a('number');
 
             if (process.env.PORT && util.validate.port(process.env.PORT)) {
-                util.config.port.should.equal(process.env.PORT);
+                util.config.port.should.equal(parseInt(process.env.PORT));
             } else {
                 util.config.port.should.equal(defaults.port);
             }
