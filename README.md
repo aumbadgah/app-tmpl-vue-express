@@ -26,9 +26,9 @@ View results at [http://localhost/woot](http://localhost/woot)
 #### environment
 
 ```
-[PORT=3000]
-[NODE_ENV=prod] # dev || prod
-[BASE_PATH=/]
+PORT=[3000]
+NODE_ENV=[prod] # dev || prod
+BASE_PATH=[/]
 ```
 
 Defaults can be configured in `config/defaults.json`
