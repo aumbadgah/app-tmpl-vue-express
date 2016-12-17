@@ -11,7 +11,7 @@
     "rm-container": "if docker inspect --type container aumbadgah-app-tmpl; then docker rm -f aumbadgah-app-tmpl; else echo 'No existing container'; fi",
     "hmr": "node_modules/.bin/watchify -vd -p browserify-hmr lib/front/src/main.js -o lib/front/dist/bundle.js",
     "prestart": "npm run rm-container && npm run build",
-    "run-container": "docker run --name aumbadgah-app-tmpl -i --expose ${PORT:=3000} -p ${PORT:=3000}:${PORT:=3000} --env PORT=${PORT:=3000} --env NODE_ENV=${NODE_ENV:=dev} --env BASE_PATH=${BASE_PATH:=/} --volume $(pwd)/lib/front/src/templates:/app/lib/front/src/templates --volume $(pwd)/lib/front/dist:/app/lib/front/dist aumbadgah-app-tmpl",
+    "run-container": "docker run --name aumbadgah-app-tmpl -i --expose ${PORT:=3000} -p ${PORT:=3000}:${PORT:=3000} --env PORT=${PORT:=3000} --env NODE_ENV=${NODE_ENV:=dev} --env BASE_PATH=${BASE_PATH:=/} --volume $(pwd)/lib:/app/lib aumbadgah-app-tmpl",
     "start": "node_modules/.bin/concurrently \"npm run hmr\" \"npm run run-container\"",
     "test": "node_modules/.bin/eslint index.js && node_modules/.bin/eslint lib/front/src && node_modules/.bin/eslint lib/modules && node_modules/.bin/eslint lib/routes && node_modules/.bin/eslint lib/server.js && node_modules/.bin/eslint test && node_modules/.bin/mocha test"
   },

@@ -4,18 +4,15 @@ MAINTAINER antti.suoninen@gmail.com
 
 RUN mkdir /app
 
-ADD config /app/config
-ADD lib /app/lib
 ADD package.json /app/package.json
-ADD index.js /app/index.js
-ADD .babelrc /app/.babelrc
-ADD .eslintrc /app/.eslintrc
+WORKDIR /app
+RUN npm install --no-progress
 
-VOLUME /app/lib/front/src/templates
-VOLUME /app/lib/front/dist
+ADD .babelrc /app/.babelrc
+ADD config /app/config
+ADD index.js /app/index.js
+
+VOLUME /app/lib
 
 WORKDIR /app
-
-RUN NODE_ENV=dev npm install --no-progress
-
 CMD ["node", "index.js"]
