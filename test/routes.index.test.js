@@ -1,6 +1,6 @@
 'use strict';
 
-/* global describe, it */
+/* global describe, it, $ */
 
 const chai = require('chai');
 const chaiHttp = require('chai-http');
@@ -11,16 +11,20 @@ const server = require('./../lib/server');
 const config = require('./../lib/modules/util').config;
 
 chai.should();
-chai.use(chaiHttp);
 
-describe('routes.test', function() {
-    describe('GET /', function() {
-        it('should ', function(done) {
+chai.use(chaiHttp);
+// chai.use($);
+
+describe('routes.test', () => {
+    describe('GET /', () => {
+        it('should return index.html', done => {
 
             chai.request(server)
                 .get(config.path)
-                .end(function(err, res){
+                .end((err, res) => {
                     res.should.have.status(200);
+                    res.should.be.html;
+
                     done();
                 });
 

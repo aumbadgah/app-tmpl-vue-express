@@ -14,7 +14,7 @@ describe('util', function() {
         it('should equal dev', () => {
 
             util.config.env.should.be.a('string');
-            util.config.env.should.equal(defaults.env);
+            util.config.env.should.be.oneOf(['dev', 'prod']);
 
         });
     });
