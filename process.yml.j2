@@ -1,0 +1,8 @@
+apps:
+  - script: "index.js"
+    name: 'server'
+    instances: max
+    exec_mode: cluster
+    env:
+      PORT: "{{ aumbadgah_app_tmpl_port }}"
+      BASE_PATH: "{{ aumbadgah_app_tmpl_base_path }}"

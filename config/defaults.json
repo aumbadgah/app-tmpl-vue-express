@@ -1,0 +1,5 @@
+{
+    "basePath": "/",
+    "env": "prod",
+    "port": 3000
+}
