@@ -1,3 +1,9 @@
+## 0.2.0
+
+    **Implemented enhancements:**
+
+    - Server code live reload
+
 ## 0.1.3
 
     **Implemented enhancements:**
