@@ -10,8 +10,9 @@
     "build-dev": "docker build -t app-tmpl-vue-express -f dev.Dockerfile .",
     "container-remove": "if docker inspect --type container app-tmpl-vue-express; then docker rm -f app-tmpl-vue-express; else echo 'No existing container'; fi",
     "container-run": "docker run --name app-tmpl-vue-express -i --expose ${PORT:=3000} -p ${PORT:=3000}:${PORT:=3000} --env PORT=${PORT:=3000} --env NODE_ENV=${NODE_ENV:=dev} --env BASE_PATH=${BASE_PATH:=/} --volume $(pwd)/lib:/app/lib app-tmpl-vue-express",
+    "create-dist": "mkdir -p lib/front/dist",
     "hmr": "node_modules/.bin/watchify -vd -p browserify-hmr lib/front/src/main.js -o lib/front/dist/bundle.js",
-    "prestart": "npm test && npm run container-remove && npm run build-dev",
+    "prestart": "npm test && npm run container-remove && npm run build-dev && npm run create-dist",
     "start": "node_modules/.bin/concurrently \"npm run hmr\" \"npm run container-run\"",
     "test": "node_modules/.bin/eslint index.js && node_modules/.bin/eslint lib/front/src && node_modules/.bin/eslint lib/modules && node_modules/.bin/eslint lib/routes && node_modules/.bin/eslint lib/server.js && node_modules/.bin/eslint test && node_modules/.bin/mocha test"
   },

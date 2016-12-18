@@ -5,6 +5,10 @@
     - Update project name
     - .gitignore development bundle
 
+    **Fixed bugs:**
+    
+    - Create `lib/front/dist` directory before browserify
+
 ## 0.1.2
 
     **Fixed bugs:**
