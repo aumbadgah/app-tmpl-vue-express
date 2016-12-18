@@ -1,6 +1,6 @@
 {
   "name": "app-tmpl-vue-express",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "config": {
     "loglevel": "error"
   },
