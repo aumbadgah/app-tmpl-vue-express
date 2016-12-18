@@ -30,7 +30,7 @@ View results at [http://localhost:3000/woot](http://localhost:3000/woot)
 
 
 ```
-NODE_ENV=dev PORT=80 BASE_PATH=/woot npm start-docker
+NODE_ENV=dev PORT=80 BASE_PATH=/woot npm run start-docker
 ```
 
 Runs the server in a Docker container, but does not support server live reload. Does, however, run Vue with HMR.
