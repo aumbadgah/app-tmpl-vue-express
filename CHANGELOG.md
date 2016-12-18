@@ -1,3 +1,10 @@
+## 0.1.3
+
+    **Implemented enhancements:**
+
+    - Update project name
+    - .gitignore development bundle
+
 ## 0.1.2
 
     **Fixed bugs:**
