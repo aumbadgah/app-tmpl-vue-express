@@ -2,17 +2,19 @@ FROM node:alpine
 
 MAINTAINER antti.suoninen@gmail.com
 
+RUN npm install pm2 -g
+
 RUN mkdir /app
 
-ADD package.json /app/package.json
+COPY package.json /app/package.json
 WORKDIR /app
 RUN npm install --no-progress
 
-ADD .babelrc /app/.babelrc
-ADD config /app/config
-ADD index.js /app/index.js
+COPY .babelrc /app/.babelrc
+COPY config /app/config
+COPY index.js /app/index.js
 
 VOLUME /app/lib
 
 WORKDIR /app
-CMD ["node", "index.js"]
+CMD ["pm2-dev", "start", "index.js"]
