@@ -1,4 +1,4 @@
-## aumbadgah-app-tmpl
+## app-tmpl-vue-express
 
 - Vue with hot module reload
 - Express
