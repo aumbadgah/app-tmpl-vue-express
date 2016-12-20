@@ -1,3 +1,10 @@
+## 0.3.0
+
+    **Implemented enhancements:**
+
+    - Better Vue example with nested component and api request
+    - Production bundle
+
 ## 0.2.0
 
     **Implemented enhancements:**
