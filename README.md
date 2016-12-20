@@ -40,18 +40,18 @@ NODE_ENV=dev PORT=80 BASE_PATH=/woot npm run start-docker
 View results at [http://localhost/woot](http://localhost/woot)
 
 
-#### production
-
-Build a production version of browser script bundle
-```
-npm run build-production-bundle
-```
-
-
 #### environment
 
 ```
 BASE_PATH=[/]
 NODE_ENV=[prod] # dev || prod
 PORT=[3000]
+```
+
+
+#### production
+
+Build a production version of browser script bundle
+```
+npm run build-production-bundle
 ```
