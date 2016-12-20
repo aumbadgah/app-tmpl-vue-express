@@ -15,7 +15,7 @@
         height: 100%;
     }
 
-    #app {
+    .app-component {
         height: 100%;
         
         .red {
@@ -25,17 +25,29 @@
 </style>
 
 <template>
-    <div id="app">
-        <h1 class="red">{{msg}}</h1>
+    <div class="app-component">
+        <msg-header v-bind:message="msg"></msg-header>
     </div>
 </template>
 
 <script>
+    import api from './../modules/api'
+
+    import MessageHeader from './messageHeader.vue'
+
     export default {
         data () {
             return {
-                msg: 'Hello woooorld!'
+                msg: 'Hello world!'
             }
+        },
+        created: function () {
+            api.getMsg()
+            .then(msg => this.msg = msg);
+        },
+        components: {
+            'msg-header': MessageHeader
         }
+        
     }
 </script>
