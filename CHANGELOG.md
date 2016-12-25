@@ -1,3 +1,9 @@
+## 0.3.1
+
+    **Fixed bugs:**
+
+    - Add client-request dependency
+
 ## 0.3.0
 
     **Implemented enhancements:**
