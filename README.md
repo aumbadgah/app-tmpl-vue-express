@@ -21,23 +21,32 @@ NODE_ENV=dev npm i
 
 #### dev
 
-Vue components can be found in `lib/front/src/components`. Prefer `import` statements in Vue components.
+Most of your backend source should go in `lib/modules` and `lib/routes`. Create a new router file in `lib/routes` to make the server automatically listen to your new routes, `require` the necessary `lib/modules` and you're all set.
 
-Most of your backend source should go in `lib/modules` and `lib/routes`. Just create a new router file in `lib/routes` to make the server automatically listen to your new routes, `require` the necessary `lib/modules` and you're all set.
+Vue components can be found in `lib/front/src/components`.
 
-You can run the server on host or in a container. Running on host enables server live reload on file change, but both ways run Vue with hot module reload.
 
 ```
-# run on host with server live reload and Vue HMR
 NODE_ENV=dev BASE_PATH=/woot npm start
 ```
+Run the application on host. Starts the server with live reload on file change and Vue with hot module reload.
+
 View results at [http://localhost:3000/woot](http://localhost:3000/woot)
 
+
 ```
-# run in container with Vue HMR
 NODE_ENV=dev PORT=80 BASE_PATH=/woot npm run start-docker
 ```
+Run the application in a Docker container. Starts Vue with hot module reload server, but runs the server *without* live reload.
+
 View results at [http://localhost/woot](http://localhost/woot)
+
+
+```
+npm test
+```
+Test your code with `eslint` and `mocha` unit tests. Tests are also run by default on development server start.
+
 
 
 #### environment
