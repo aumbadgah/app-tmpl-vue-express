@@ -19,22 +19,22 @@ NODE_ENV=dev npm i
 ```
 
 
-### dev
+### development
 
-Run the application on host.
+#### run application on host
 ```
 NODE_ENV=dev BASE_PATH=/woot npm start
 ```
-Starts the server with live reload on file change and Vue with hot module reload.
+Starts the application server with live reload on file change and Vue with hot module reload.
 
 View results at [http://localhost:3000/woot](http://localhost:3000/woot)
 
 
-Run the application in a Docker container.
+#### run application in a Docker container
 ```
 NODE_ENV=dev PORT=80 BASE_PATH=/woot npm run start-docker
 ```
-Starts Vue with hot module reload server, but runs the server *without* live reload.
+Starts Vue with hot module reload server, but runs the application server *without* live reload.
 
 View results at [http://localhost/woot](http://localhost/woot)
 
