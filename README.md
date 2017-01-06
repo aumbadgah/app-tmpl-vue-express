@@ -1,46 +1,59 @@
 
-## app-tmpl-vue-express
+# app-tmpl-vue-express
 
 - Vue with hot module reload
 - Express
 - Docker
 
 
-#### requirements
+### requirements
 
 - [NodeJS](https://nodejs.org/en/download/)
 - [Docker](https://docs.docker.com/engine/installation/)
 
 
-#### install
+### install
 
 ```
 NODE_ENV=dev npm i
 ```
 
 
-#### dev
+### development
 
-Vue components can be found in `lib/front/src/components`. Prefer `import` statements in Vue components.
-
-Most of your backend source should go in `lib/modules` and `lib/routes`. Just create a new router file in `lib/routes` to make the server automatically listen to your new routes, `require` the necessary `lib/modules` and you're all set.
-
-You can run the server on host or in a container. Running on host enables server live reload on file change, but both ways run Vue with hot module reload.
-
+#### run application on host
 ```
-# run on host with server live reload and Vue HMR
 NODE_ENV=dev BASE_PATH=/woot npm start
 ```
+Starts the application server with live reload on file change and Vue with hot module reload.
+
 View results at [http://localhost:3000/woot](http://localhost:3000/woot)
 
+
+#### run application in a Docker container
 ```
-# run in container with Vue HMR
 NODE_ENV=dev PORT=80 BASE_PATH=/woot npm run start-docker
 ```
+Starts Vue with hot module reload server, but runs the application server *without* live reload.
+
 View results at [http://localhost/woot](http://localhost/woot)
 
 
-#### environment
+Most of your backend source should go in `lib/modules` and `lib/routes`. Create a new router file in `lib/routes` to make the server automatically listen to your new routes, `require` the necessary `lib/modules` and you're all set.
+
+Vue components can be found in `lib/front/src/components`.
+
+
+### test
+
+Test your code with `eslint` and `mocha` unit tests.
+```
+npm test
+```
+Tests are also run by default on development server start.
+
+
+### environment
 
 ```
 BASE_PATH=[/]
@@ -49,7 +62,7 @@ PORT=[3000]
 ```
 
 
-#### production
+### production
 
 Build a production version of browser script bundle
 ```
